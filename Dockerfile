@@ -1,6 +1,7 @@
 FROM eclipse-temurin:17-jdk-focal
 
-# Download Superchronic to manage cron without needing root access
+# Download Supercronic to manage cron without needing root access
+# Source: https://github.com/aptible/supercronic/?tab=readme-ov-file
 ENV SUPERCRONIC_URL=https://github.com/aptible/supercronic/releases/download/v0.2.33/supercronic-linux-amd64 \
     SUPERCRONIC_SHA1SUM=71b0d58cc53f6bd72cf2f293e09e294b79c666d8 \
     SUPERCRONIC=supercronic-linux-amd64
@@ -20,5 +21,5 @@ WORKDIR /home/moderne/
 COPY --chown=moderne:moderne ./files .
 RUN chmod +x ./entrypoint.sh
 
-# Runs superchronic in the background and launches another process
+# Runs supercronic in the background and launches another process
 ENTRYPOINT ["./entrypoint.sh"]
