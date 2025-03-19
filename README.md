@@ -9,7 +9,7 @@ You should see the output of the `tail -f /home/moderne/cron.log` command update
 
 `cron` requires root access, which complicates things if we want to run our container using the `moderne` user. 
 
-To work around this, we're install the superchronic utility -- a `cron` alternative that does not require root access.
+To work around this, we're installing the superchronic utility -- a `cron` alternative that does not require root access.
 
 In the `Dockerfile`, we:
 
